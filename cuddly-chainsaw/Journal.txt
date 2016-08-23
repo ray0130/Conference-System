@@ -1,0 +1,1 @@
+Today in Introduction to Robotics, we learned that GIT is a system that helps the developer tracks his edit history, just like the Google Revision History tool. We also learned how to create a GIT repository along with cloning the repository in our local folder.
