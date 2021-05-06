@@ -1,0 +1,30 @@
+
+Design Implementations:
+
+    Iterator:
+	We didn't use the Iterator design pattern for the sake of simplicity and since for-each loops worked to accomplish
+	our purpose. We also needed to access the index of the items inside the items.
+
+    Observer:
+	We've indirectly implemented an observer. In the requests, when an attendee makes a request, every organizer can see
+	the request. Every organizer can see updates made to the system (by other organizers). From our lecture slides
+	(week 7), it is explained that generally in practice, people don't subclass from Observable and rather create their
+	 own implementation. We wanted to keep our program as realist as possible, hence we didn't subclass either, rather
+	 just used it in the main class.
+
+	Strategy Design Pattern:
+	There are different ways to implement some of our algorithms. For example in sendMessage.
+	We didn't make a different class for the different variations of our algorithms since this would unnecessarily create
+	a lot of classes which negatively impacts the space-time complexity of our program. Our strategy was that we knew
+	all users (except Admin) can message, but their way of messaging is different. For example, an Attendee can only
+	send single messages, while Organizers can send all attendees messages. To put this together, we made a method in
+	messageSystem that handles all the different ways people can message given the type of the user.
+
+    Dependency Injection:
+	The managers are dependency injected into the controllers so the controllers can modify and update them. This is
+	beneficial so that we dont need to pass objects and data back and forth, rather since it is aliased due to dependency
+	injection (as they are passed in as parameters), they get updated in the main controller as well.
+
+	Factory:
+	We have a factory - loginRegistration system which creates different types of user based on the users needs. Although we
+	don't have a separate class to make each type of user, we make the user in their respective managers.
